@@ -9,16 +9,19 @@ O usuário manda a operação completa. Ex: 10 + 10, o client identifica a opera
 //Raiz Quadrada
 Exemplo: 
         sqrt 81
+
 **9**
 
 //Potenciação
 Exemplo: 
         2^2
+
 **4**
 
 //Porcentagem
 Exemplo: 
         15 % 200
+
 **30**
 
 -----------------------------------------------------
