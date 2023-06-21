@@ -1,52 +1,33 @@
-package projeto;
-
-import java.util.Arrays;
-
 public class Calculator {
 
-    public static Integer selectServer(String line) {
-        if (line.contains("+") || line.contains("-") || line.contains("*") || line.contains("/")) {
-            return 1;
-        }
-        if (line.contains("%") || line.contains("^") || line.contains("sqrt")) {
-            return 2;
-        }
-        return 0;
-    }
-    public static float sum(String line){
-        String[] values = line.split("\\+");
-        System.out.println(Arrays.toString(values));
-        return Float.parseFloat(values[0]) + Float.parseFloat(values[1]);
-    }
-    public static float sub(String line){
-        String[] values = line.split("-");
-        System.out.println(Arrays.toString(values));
-        return Float.parseFloat(values[0]) - Float.parseFloat(values[1]);
-    }
-    public static float prod(String line){
-        String[] values = line.split("\\*");
-        System.out.println(Arrays.toString(values));
-        return Float.parseFloat(values[0]) * Float.parseFloat(values[1]);
-    }
-    public static float div(String line){
-        String[] values = line.split("/");
-        System.out.println(Arrays.toString(values));
-        return Float.parseFloat(values[0]) / Float.parseFloat(values[1]);
-    }
-    public static double pct(String line){
-        String[] values = line.split("%");
-        System.out.println(Arrays.toString(values));
-        return Float.parseFloat(values[1]) / 100 * Float.parseFloat(values[0]);
-    }
-    public static double pow(String line){
-        String[] values = line.split("\\^");
-        System.out.println(Arrays.toString(values));
-        return Math.pow(Float.parseFloat(values[0]) ,Float.parseFloat(values[1]));
-    }
-    public static double sqrt(String line){
-        String[] values = line.split("sqrt");
-        System.out.println(Arrays.toString(values));
-        return Math.sqrt(Float.parseFloat(values[1]));
+    public static int add(int num1, int num2) {
+        return num1 + num2;
     }
 
+    public static int subtract(int num1, int num2) {
+        return num1 - num2;
+    }
+
+    public static int multiply(int num1, int num2) {
+        return num1 * num2;
+    }
+
+    public static double divide(int num1, int num2) {
+        if (num2 == 0) {
+            throw new ArithmeticException("Divisão por zero não é permitida");
+        }
+        return (double) num1 / num2;
+    }
+
+    public static double porc(int num1, int num2) {
+        return (double) (num1 * 100) / num2;
+    }
+
+    public static double exp(int num1, int num2) {
+        return Math.pow(num1,num2);
+    }
+
+    public static double raiz(int num1) {
+        return Math.sqrt(num1);
+    }
 }
